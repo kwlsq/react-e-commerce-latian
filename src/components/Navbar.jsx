@@ -11,7 +11,7 @@ import {
 } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { login,logout } from "../redux/Action";
+import { login, logout } from "../redux/Action";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ const Header = (props) => {
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 {
-                    props.username
+                  props.username
                     ?
                     props.username
                     :
@@ -38,19 +38,21 @@ const Header = (props) => {
               <DropdownMenu right>
                 <Link to="/login">
                   <DropdownItem>
-                  {
-                    props.username
-                    ?
-                    <Link to="/"><div onClick={props.logout}>Log Out</div></Link>
-                    :
-                    'Log in'
-                }
-                </DropdownItem>
+                    {
+                      props.username
+                        ?
+                        <Link to="/"><div onClick={props.logout}>Log Out</div></Link>
+                        :
+                        'Log in'
+                    }
+                  </DropdownItem>
                 </Link>
                 <DropdownItem divider />
-                <DropdownItem>
-                  Register
+                <Link to="/register">
+                  <DropdownItem>
+                    Register
                 </DropdownItem>
+                </Link>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
@@ -62,7 +64,7 @@ const Header = (props) => {
 
 const mapStatetoProps = (state) => {
   return {
-      username: state.user.username
+    username: state.user.username
   }
 }
 

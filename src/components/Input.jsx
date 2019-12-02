@@ -32,18 +32,18 @@ class InputLogin extends Component{
             })
         }
     }
-
-    
-    
+  
     render(){
         return(
             <div className='d-flex justify-content-center row'>
                 <div>
+                    <p>Username</p>
                     <Input type='text' innerRef={(text)=>this.text=text} placeholder="Username"></Input>
                     <br/>
+                    <p>Password</p>
                     <Input type='password' innerRef={(pass)=>this.pass=pass}placeholder="Password"></Input>
                     <br/>
-                    <Link to='/'><Button onClick={this.loginUser}> Click Me! </Button></Link>
+                    <Link to='/'><Button onClick={this.loginUser}> Sign In </Button></Link>
                 </div>
             </div>
         )
