@@ -21,9 +21,10 @@ class InputLogin extends Component{
                     alert('username or password invalid')
                 } else {
                     this.props.login(res.data[0])
+                    console.log(this.props.login(res.data[0]));
+                    
                     this.text.value=null;
                     this.pass.value=null;
-
                 }
             })
             .catch((err)=>{
@@ -31,9 +32,10 @@ class InputLogin extends Component{
             })
         }
     }
+
+    
+    
     render(){
-        console.log(this.props.username);
-        console.log(this.props.role);
         return(
             <div className='d-flex justify-content-center row'>
                 <div>

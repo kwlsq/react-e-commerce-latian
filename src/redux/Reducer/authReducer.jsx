@@ -12,6 +12,7 @@ const authReducer = (state=INITIAL_STATE,action) =>{
                 role:action.payload.role
             }
         case 'LOGOUT':
+            alert('Log Out Successful')
             return INITIAL_STATE
         default:
                 return state

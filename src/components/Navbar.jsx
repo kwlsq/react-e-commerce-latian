@@ -28,7 +28,7 @@ const Header = (props) => {
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 {
-                  props.username
+                    props.username
                     ?
                     props.username
                     :
@@ -38,7 +38,13 @@ const Header = (props) => {
               <DropdownMenu right>
                 <Link to="/login">
                   <DropdownItem>
-                    Log In
+                  {
+                    props.username
+                    ?
+                    <Link to="/"><div onClick={props.logout}>Log Out</div></Link>
+                    :
+                    'Log in'
+                }
                 </DropdownItem>
                 </Link>
                 <DropdownItem divider />
