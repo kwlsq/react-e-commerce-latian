@@ -1,0 +1,9 @@
+.notifier-gagal{
+    color: red;
+    margin-bottom: 2px;
+}
+
+.notifier-sukses{
+    color: green;
+    margin-bottom: 2px;
+}
