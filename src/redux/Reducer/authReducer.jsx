@@ -14,6 +14,11 @@ const authReducer = (state=INITIAL_STATE,action) =>{
         case 'LOGOUT':
             alert('Log Out Successful')
             return INITIAL_STATE
+        case 'HALO':
+            return {
+                ...state,
+                username:'Halo'
+            }
         default:
                 return state
     }

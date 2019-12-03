@@ -10,3 +10,9 @@ export const logout = ()=>{
         type:'LOGOUT'
     }
 }
+
+export const halo = () => {
+    return{
+        type:'HALO'
+    }
+}

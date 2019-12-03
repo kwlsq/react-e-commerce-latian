@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import landingPage from './pages/landingPage';
 import register from './pages/register';
 import login from './pages/login';
+import Belajar from './pages/belajarRedux';
 import { BrowserRouter } from 'react-router-dom';
 
 class App extends React.Component {
@@ -14,8 +15,9 @@ class App extends React.Component {
         <div>
           <Navbar />
           <Route path="/" component={landingPage} exact />
-          <Route path="/login" component={login} exact />
-          <Route path="/register" component={register} exact />
+          <Route path="/login" component={login}  />
+          <Route path="/register" component={register}  />
+          <Route path="/belajar" component={Belajar}  />
         </div>
       </BrowserRouter>
     )

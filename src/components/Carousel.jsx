@@ -17,7 +17,7 @@ const items = [
     caption: 'Kudanil Arizona'
   },
   {
-    src:'http://clipart-library.com/images_k/dragon-transparent-png/dragon-transparent-png-15.png',
+    src:'https://www.stickpng.com/assets/images/5904f32fbbee4f0964d87900.png',
     caption: 'Naga Skyrim'
   }
 ];

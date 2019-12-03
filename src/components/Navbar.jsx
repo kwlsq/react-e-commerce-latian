@@ -28,23 +28,20 @@ const Header = (props) => {
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 {
-                  props.username
+                    props.role //if ini true maka keluar props.username, if ini false, dia nampilin string
                     ?
                     props.username
                     :
                     'Unknown User'
                 }
               </DropdownToggle>
-              <DropdownMenu right>
-                <Link to="/login">
-                  <DropdownItem>
-                    {
-                      props.username
-                        ?
-                        <Link to="/"><div onClick={props.logout}>Log Out</div></Link>
-                        :
-                        'Log in'
-                    }
+              {
+                props.role
+                ?
+                <DropdownMenu right>
+                <Link to="/">
+                  <DropdownItem onClick={props.logout}>
+                    Log Out
                   </DropdownItem>
                 </Link>
                 <DropdownItem divider />
@@ -53,7 +50,32 @@ const Header = (props) => {
                     Register
                 </DropdownItem>
                 </Link>
+                <Link to="/belajar">
+                  <DropdownItem>
+                    Belajar Redux
+                </DropdownItem>
+                </Link>
               </DropdownMenu>
+              :
+              <DropdownMenu right>
+                <Link to="/login">
+                  <DropdownItem>
+                    Log In
+                  </DropdownItem>
+                </Link>
+                <DropdownItem divider />
+                <Link to="/register">
+                  <DropdownItem>
+                    Register
+                </DropdownItem>
+                </Link>
+                <Link to="/belajar">
+                  <DropdownItem>
+                    Belajar Redux
+                </DropdownItem>
+                </Link>
+              </DropdownMenu>
+              }
             </UncontrolledDropdown>
           </Nav>
         </Collapse>
@@ -64,7 +86,8 @@ const Header = (props) => {
 
 const mapStatetoProps = (state) => {
   return {
-    username: state.user.username
+    username: state.user.username,
+    role:state.user.role
   }
 }
 
